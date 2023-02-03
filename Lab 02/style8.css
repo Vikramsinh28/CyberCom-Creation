@@ -1,0 +1,46 @@
+.form{
+    border: 2px solid rgb(227, 227, 227);
+    padding: 4%;
+    background-color: #f6f6f6;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personal{
+    display: flex;
+    flex-direction: column;
+}
+.addedForm{
+    display: flex;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left:2%;
+}
+.details1{
+    margin-left: 16%;
+    width: 60%;
+}
+.number{
+    display: flex;
+    width: 99%;
+}
+.details3{
+    margin-left: 22%;
+}
+.details3 input{
+    width: 95%;
+}
+.details3 select{
+    width: 99%;
+}
+.btns{
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

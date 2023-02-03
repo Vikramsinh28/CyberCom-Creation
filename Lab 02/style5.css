@@ -1,0 +1,27 @@
+*{  
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+table{
+    margin: 0 auto;
+}
+
+
+.header{
+    background-color: #56dba1;
+}
+
+
+
+.blue{
+    background-color: #4c8ee4;
+}
+
+.red{
+    background-color: #f5a9a9;
+}
+
+.yellow{
+    background-color: #c5cf51;
+}
