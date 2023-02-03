@@ -1,46 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
 .form{
-    border: 2px solid rgb(227, 227, 227);
-    padding: 4%;
-    background-color: #f6f6f6;
+    width: 100%;
+    max-width: 600px;
+    background: #dfdede;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-.container{
+
+.form h1{
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+input{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    width: 276px;
+
+}
+
+select{
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 276px;
+}
+
+
+
+
+.btn{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
+
 }
-.personal{
-    display: flex;
-    flex-direction: column;
+
+.sbtn{
+    padding: 10px;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
 }
-.addedForm{
-    display: flex;
+
+.rbtn{
+    padding: 10px;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
 }
-.details{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left:2%;
+
+
+.label{
+    display: inline-block;
+    text-align: right;
+    margin: 10px;
+    width: 173px;
+    font-size: 20px;
 }
-.details1{
-    margin-left: 16%;
-    width: 60%;
-}
-.number{
-    display: flex;
-    width: 99%;
-}
-.details3{
-    margin-left: 22%;
-}
-.details3 input{
-    width: 95%;
-}
-.details3 select{
-    width: 99%;
-}
-.btns{
-    margin-top: 8%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+table , th , td{
+    border: 1px solid grey;
 }
