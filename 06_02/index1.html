@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app1_1.js"></script>
+    <script src="app1_2.js"></script>
+    <script src="app1_5.js"></script>
+    <script src="app1_4.js"></script>
+</head>
+<body>
+     <h1>JavaScript Prctice 1.1</h1>
+     <h4>1</h4>
+     <p id="ptag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eveniet dignissimos minima.</p>
+     <button onclick="myFunction()">Click</button>
+     <h4>2</h4>
+     <ul id="ul">
+        <li>apple</li>
+        <li>Banana</li>
+     </ul>
+     <button onclick="add()">Add</button>
+     <button onclick="remove()">Remove</button>
+     <h4>3</h4>
+     <p id="para1">Lorem ipsum dolor sit.</p>
+     <p id="para2">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+     <p id="para3">Lorem, ipsum dolor.</p>
+ 
+     <button id="p1" onclick='p1("para1" , "new para1")'>p1</button>
+     <button id="p2" onclick='p1("para2" , "new Para2")'>p1</button>
+     <button id="p3" onclick='p1("para3" , "new Para3")'>p1</button>
+
+     <h4>4</h4>
+     <form>
+        <div class="details">
+            <label for="fname">First Name : <input type="text" name="fname" id="fname"></label>
+            
+        </div>
+        <div class="details">
+            <label for="mobile">Mobile : <input type="number" name="mobile" id="mobile"></label>    
+        </div>
+        <div class="details">
+            <label for="email">Email : <input type="text" name="email" id="email"></label>
+            
+        </div>
+        <input type="button" value="Submit" onclick="handleSubmit()">
+     </form>
+
+     <h5>5</h5>
+
+     <div class="img">
+        <img src="./img1.jpeg" alt="" onclick='onImageChange("img1" , "./img3.jpeg")' id="img1">
+        <img src="./img2.jpeg" alt="" onclick='onImageChange("img2" , "./img1.jpeg")' id="img2">
+        <img src="./img3.jpeg" alt="" onclick='onImageChange("img3" , "./img2.jpeg")' id="img3">
+     </div>
+     
+</body>
+</html>
