@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h4 class="head">Information</h4>
+        <h3 class="headH3">Health Care Insurance <sup>+</sup></h3>
+
+        <p class="headP">Complete all answers in capital letters</p>
+ 
+        <div class="box">
+            <h5>EMPLOYEE STATEMENT</h5>
+            <div class="grid">
+                <div class="edittext">
+                    <label for="gcn">Group Contact Number</label>
+                    <input type="text">
+                </div>
+                <div class="edittext">
+                    <label for="gcn">Certificate Number</label>
+                    <input type="text">
+                </div>
+                <div class="edittext">
+                    <label for="gcn">Employee Last name and given name</label>
+                    <input type="text">
+                </div>
+                
+                <div class="edittext">
+                    <label for="gcn">Date of Birth(DD/MM/YY)</label>
+                    <input type="text">
+                </div>
+                <div class="edittext">
+                    <label for="gcn">Employee Address</label>
+                    <input type="text">
+                </div>
+            </div>
+            <p class="statement">Would you like your claims and payment deposited into your bank account ?</p>
+            <div class="edittext innertext">
+                <input type="checkbox" name="yes" id="">
+                <p> yes</p>
+                <p>I have include a valid cheque</p>
+            </div>
+            <p>Please note that only a one time valide cheque is required if you change your banking information a new void cheque will be needed</p>
+
+        </div>
+
+        <div class="box">
+            <h5>COORDINATION OF BENEFITS</h5>
+            <p>1. Does your're spouse and / or children have coverage under any other medical plan or contract ?</p>
+            <div class="edittext">
+                <div class="edittext innertext checkMargin">
+                    <input type="radio" name="first" id="yes1">
+                    <p>yes</p>
+                </div>
+                <div class="edittext innertext checkMargin">
+                    <input type="radio" name="first" id="no1">
+                    <p>No</p>
+                </div>
+            </div>
+            <div class="hide1" id="hide1">
+                <div class="edittext">
+                    <label for="gcn">if yes , spouse's date of birth ? (DD/MM/YY)</label>
+                    <input type="text">
+                </div>
+                <div class="edittext">
+                    <label for="gcn">Insurance company. policy number and certificate number</label>
+                    <input type="text">
+                </div>
+            </div>
+            <p>2. is any expense the result of an accident?</p>
+            <div class="edittext">
+                <div class="edittext innertext checkMargin">
+                    <input type="radio" name="second" id="yes2" >
+                    <p>yes</p>
+                </div>
+                <div class="edittext innertext checkMargin">
+                    <input type="radio" name="second" id="no2">
+                    <p>No</p>
+                </div>
+            </div>
+            <div class="hide2" id="hide2">
+                <div class="edittext later">
+                    <p>Location of accident?</p>
+                    <div class="edittext innertext checkMargin">
+                        <input type="checkbox" name="yes" id="">
+                        <p>work</p>
+                    </div>
+                    <div class="edittext innertext checkMargin">
+                        <input type="checkbox" name="NO" id="">
+                        <p>Home</p>
+                    </div>
+                    <div class="edittext innertext checkMargin">
+                        <input type="checkbox" name="NO" id="">
+                        <p>Other</p>
+                    </div>
+                </div>
+                <div class="edittext">
+                    <label for="gcn">Explain how the accident occured</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h5>DRUGS . VISION CARE , PARAMEDICAL SERVICES AND OTHERS - PATIENT INFORMATION</h5>
+            <table id="table" border="1">
+                <tr>
+                    <th>Patient's name</th>
+                    <th>Date of birth</th>
+                    <th>Relation to plan member</th>
+                    <th>Total Charge</th>
+                    <th><Button id="btn">Add</Button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size:9px;
+}
+.container{
+    display: flex;
+    padding: 3rem;
+    flex-direction: column;
+}
+h3{
+    color: rgb(6, 217, 193);
+}
+h5{
+    color: rgb(6, 217, 193);
+}
+input{
+     outline: none;
+     border: none;
+     border-bottom: 1px solid rgb(165, 165, 165);
+}
+.headH3{
+    font-size: 2.3rem;
+}
+sup{
+    font-size: 2.3rem;
+}
+.head{
+    font-size: 1.3rem;
+}
+.headP{
+    font-size: 11px;
+}
+.box{
+    border: 1px solid rgb(6, 217, 193);
+    margin-bottom: 1%;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.edittext{
+    display: flex;
+    margin-bottom: 1%;
+}
+.statement{
+    color: rgb(6, 217, 193);
+}
+.innertext{
+    display: flex;
+    align-items: center;
+}
+.innertext p{
+    margin-left: 1%;
+}
+.later{
+    width: 30%;
+}
+.hide1{
+    display: none;
+}
+.hide2{
+    display: none;
+}
+.hide2 .edittext .checkMargin{
+    margin-left: 3%;
+}
+table{
+    width: 100%;
+}
