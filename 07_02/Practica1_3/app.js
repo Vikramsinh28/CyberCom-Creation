@@ -57,6 +57,73 @@ for(let i=0; i<stringss.length; i++){
 
 // console.log(stringss[index] , "length of string is" + x)
 
+// Q - 3
+
+// Create an array of objects and write code to sort the objects based on a specific 
+// property (e.g., name, age, etc.
+
+const users = [
+    {
+        name : "Vikramsinh",
+        age : 23
+    },
+    {
+        name : "malay",
+        age : 20
+    },
+    {
+        name : "milan",
+        age : 26
+    },
+    {
+        name : "jash",
+        age : 21
+    }
+]
+users.sort((a, b) => {
+    return a.age - b.age;
+})
+
+users.map((value , i)=> {
+    console.log(i , value.name , value.age)
+})
+
+
+// Q - 4 
+
+// Write a function that takes an array as an argument and returns a new array with 
+// duplicates removed.
+
+const a = [1,2,3,3,6,4,5,5,567,7]
+const removeDuplicate = (a) => {
+    const ar =new Set(a)
+    console.log(ar)
+}
+removeDuplicate(a)
+
+// Q -5 
+
+// Write a function that takes two arrays as arguments and returns a new array that 
+// combines the elements of both arrays, removing any duplicates.
+
+const arr1 = [1,2,3,2,1,2,3,4,3];
+const arr2 = [5,3,5,3,0,2];
+
+const arr3 = [...arr1 , ...arr2]
+
+const sorted = new Set(arr3);
+
+console.log(sorted)
+
+// Q-6 
+
+// Create an array of strings and write code to sort the strings in alphabetical order
+
+const names = ["vikrma" , "malay" , "kirit" , "hsas"];
+
+names.sort();
+console.log(names)
+
 
 
 
