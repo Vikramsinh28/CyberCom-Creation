@@ -42,7 +42,7 @@ for(let i=0; i<stringss.length-1; i++){
         stringss[j] = temp;
     }
 }
-console.log(stringss[stringss.length -1])
+// console.log(stringss[stringss.length -1])
 
 
 let x = stringss[0].length 
@@ -55,7 +55,9 @@ for(let i=0; i<stringss.length; i++){
     }
 }
 
-console.log(stringss[index] , "length of string is" + x)
+// console.log(stringss[index] , "length of string is" + x)
+
+
 
 
 
