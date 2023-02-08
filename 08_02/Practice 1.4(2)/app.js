@@ -1,4 +1,4 @@
-let str = '<html><head>Vikramsinh</head><body>Parmar</body></html>';
+let str ='<html><head><p></p></head><body></body></html>';
 
 if (str && str.length > 0) {
     let i = 0;
@@ -11,13 +11,18 @@ if (str && str.length > 0) {
                 temp += str[j];
                 j++;
             }
-            if(temp.startsWith("/")){
-                let poppedValue = arr.pop()
-                if(poppedValue !== temp.substring(1)){
-                      break;
+            if(temp.substring(temp.length - 1) === "/"){   
+            }
+            else {
+                if(temp.startsWith("/")){
+                    let poppedValue = arr.pop()
+                    if(poppedValue !== temp.substring(1)){
+                          console.log('Invalid')
+                          break;
+                    }
+                }else{
+                    arr.push(temp)
                 }
-            }else{
-                arr.push(temp)
             }
             i = j + 1;
         } else {
