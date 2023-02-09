@@ -1,4 +1,4 @@
-let str ='<html><head><p></p></head><body></body></html>';
+let str ='<html><p></p></head><body></body></html><head>';
 
 if (str && str.length > 0) {
     let i = 0;
@@ -12,17 +12,15 @@ if (str && str.length > 0) {
                 j++;
             }
             if(temp.substring(temp.length - 1) === "/"){   
+                
             }
-            else {
-                if(temp.startsWith("/")){
+            else if(temp.startsWith("/")){
                     let poppedValue = arr.pop()
                     if(poppedValue !== temp.substring(1)){
-                          console.log('Invalid')
                           break;
                     }
-                }else{
+            }else {
                     arr.push(temp)
-                }
             }
             i = j + 1;
         } else {
