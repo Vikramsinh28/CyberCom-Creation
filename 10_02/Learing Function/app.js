@@ -54,3 +54,5 @@ console.log(info.address(2909))
 let myFun = ( a , b ) => a * b;
 
 console.log(myFun(1 ,2));
+
+
