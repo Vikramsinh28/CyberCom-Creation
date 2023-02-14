@@ -12,7 +12,7 @@
     <div class="main">
         <div class="panel">
             <div class="name">
-                <h4>Hello , <span>[name]</span></h4>
+                <h4>Hello , <span id="adminName">[name]</span></h4>
             </div>
             <div class="link">
                 <a href="../dashboard.html">Dashboard</a>
@@ -22,13 +22,13 @@
             </div>
         </div>
         <div class="dash">
-            <h4>Add User</h4>
-            <div class="form">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="date" placeholder="BirthDate">
-            </div>
+            <h4>Users Session Logs</h4>
+            <table id="table" border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Login Date Time</th>
+                    <th>Logout Date Time</th>
+                </tr>
         </div>
     </div>
     <script src="./loginsession.js"></script>
