@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../app.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="alert alert-success" id="alert" role="alert">
+            </div>
+            <h4>Register</h4>
+            <form class="container">
+                <input class="form-group" type="text" placeholder="Name" id="name">
+                <input class="form-group" type="text" placeholder="Email" id="email">
+                <input class="form-group" type="password" placeholder="Password" id="password" >
+                <input class="form-group" type="password" placeholder="Confirm Password" id="confirmpassword" >
+                <select class="form-group" name="city" id="city">
+                    <option value="city" selected>Select City</option>
+                    <option value="bhavnagar">Bhavnagar</option>
+                    <option value="Bhuj">Bhuj</option>
+                    <option value="Jamnagar">Jamnagar</option>
+                </select>
+                <select class="form-group" name="state" id="state">
+                    <option value="city" selected>Select State</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Maharastra">Maharastra</option>
+                    <option value="keral">keral</option>
+                </select>
+                <div class="terms">
+                    <input type="checkbox" name="terms" id="" required>
+                    <label for="terms">Terms & Condition</label>
+                </div>
+                <input class="btn" type="button" value="Register" onclick="handleSubmit()">
+            </form>
+        </div>
+    </div>
+
+    <script src="./register.js"></script>
+</html>

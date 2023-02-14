@@ -1,0 +1,52 @@
+.form{
+    display: flex;
+}
+.input{
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border:1px solid #f3961e;
+    border-radius: 5px;
+    background: #fefefe;
+    color: #f3961e;
+    font-weight: 600;
+    transition: 0.5s;
+    margin: 2%;
+}
+.addUser-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 2%;
+}
+.action{
+    display: flex;
+}
+td{
+    margin: 1%;
+    padding: 10px;
+    text-align: center;
+}
+.action-btn{
+    width: 7vw;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #f3961e;
+    color: #fffefe;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 2%;
+}
+tr , td{
+    margin: 1%;
+    padding: 10px;
+    text-align: center;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2%;
+}
