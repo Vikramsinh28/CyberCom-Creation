@@ -49,4 +49,8 @@ table{
     width: 100%;
     border-collapse: collapse;
     margin: 2%;
+    overflow: scroll;
+}
+.action{
+    display: flex;
 }

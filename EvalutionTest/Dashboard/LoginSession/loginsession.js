@@ -1,8 +1,11 @@
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-const adminName = document.getElementById("adminName");
-adminName.textContent = currentUser.name;
 
-const admin = JSON.parse(localStorage.getItem("admin"));
+if(currentUser){
+  const adminName = document.getElementById("adminName");
+  adminName.textContent = currentUser.name;
+}
+
+const admin = JSON.parse(localStorage.getItem("users"));
 console.log(admin);
 
 const table = document.getElementById("table");

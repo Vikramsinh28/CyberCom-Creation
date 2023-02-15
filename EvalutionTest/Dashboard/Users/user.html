@@ -30,24 +30,30 @@
                     <input type="email" class="input" placeholder="Email" id="email">
                     <input type="password" class="input" placeholder="Password" id="password">
                     <input type="date" class="input" placeholder="BirthDate" id="dob">
-                    <input type="button" class="btn" placeholder="Add User" value="Add User" onclick="handleAddUser()">
+                    <input type="button" class="btn" placeholder="Add User" value="Add User" id="addUser" onclick="addUser()">
                 </div>
             </div>
             <div class="dash ">
+                <div id="msg"></div>
                 <h4>User List</h4>
-                <table id="table" border="1">
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>BirthDate</th>
-                        <th>Age</th>
-                        <th>Action</th>
-                    </tr>
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Birth Date</th>
+                            <th>Age</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody" id="tbody">
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <script src="user.js"></script>
+    <script src="userMain.js"></script>
 </body>
 </html>
