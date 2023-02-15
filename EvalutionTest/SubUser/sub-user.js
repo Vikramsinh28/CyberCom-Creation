@@ -17,6 +17,11 @@ if(currSubUser){
         const span = document.createElement('span');
         span.innerHTML = "Happy BirthDay" + " " + currSubUser.name +  "<br>";
         birthName.appendChild(span);
+    }else{
+        const birthName = document.getElementById('birthDay');
+        const span = document.createElement('span');
+        span.innerHTML = "Tamaro BirthDay Nthi" + " " + currSubUser.name ;
+        birthName.appendChild(span);
     }
 }
 
