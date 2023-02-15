@@ -1,3 +1,4 @@
+
 function handleLogin(){
     const alert = document.getElementById("alert");
     const email = document.getElementById("email").value;

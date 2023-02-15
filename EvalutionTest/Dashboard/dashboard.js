@@ -46,6 +46,7 @@ function birthDateFind(){
              for(let i of birthDate){
                  const birthName = document.getElementById('birthDay');
                  const span = document.createElement('span');
+                 span.className = "title";
                  span.innerHTML = i.name + "'s" + " Birthday" + "<br>";
                  birthName.appendChild(span);
              }

@@ -23,6 +23,14 @@
 .result{
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
+    width: 80vw;
+    height: 60vh;
+    color: #f3961e;
+    border: 2px solid #f3961e;
+    border-radius: 5px;
+}
+.title{
+    font-variant: all-petite-caps;
+    font-size: 4rem;
 }

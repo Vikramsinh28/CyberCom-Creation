@@ -7,6 +7,9 @@
 }
 .dash{
     padding: 3%;
+    width: 86vw;
+    background: #ededed;
+    text-align: center;
 }
 .main{
     display: flex;
@@ -14,11 +17,11 @@
 .panel{
     width: 14%;
     min-height: 100vh;
-    /* height: 100vh; */
     background: #f3961e;
 }
 .name{
     margin-bottom: 27%;
+    box-shadow: -3px 4px 11px 4px #fff;
 }
 .name h4{
     color: #fff;

@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 2%;
 }
 .action{
     display: flex;
@@ -41,16 +40,21 @@ td{
     margin: 2%;
 }
 tr , td{
-    margin: 1%;
     padding: 10px;
     text-align: center;
+    border: 2px solid #f3961e;
 }
 table{
+    margin-top: 2%;
     width: 100%;
+    border: 1px solid #f3961e;
     border-collapse: collapse;
-    margin: 2%;
     overflow: scroll;
 }
 .action{
     display: flex;
+}
+.title{
+    background: white;
+    font-size: 33px;
 }

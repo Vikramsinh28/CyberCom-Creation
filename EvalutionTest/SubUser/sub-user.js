@@ -15,8 +15,7 @@ if(currSubUser){
     if(currentMonth === birthMonth && currentDay === birthDay){
         const birthName = document.getElementById('birthDay');
         const span = document.createElement('span');
-        span.innerHTML = "Happy BirthDay" + currSubUser.name +  "<br>";
-
+        span.innerHTML = "Happy BirthDay" + " " + currSubUser.name +  "<br>";
         birthName.appendChild(span);
     }
 }
