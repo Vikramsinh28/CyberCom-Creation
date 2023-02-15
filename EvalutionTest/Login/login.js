@@ -23,13 +23,15 @@ function handleLogin(){
     }
 
     const users = JSON.parse(localStorage.getItem("admin"));
-
+    
     if(users){
         const user = users.find(user => user.email === email && user.password === password);
         if(user){
             alert.textContent = "Login Successful !!";
             alert.style.display = "block"
-            alert.style.backgroundColor = "green";  
+            alert.style.backgroundColor = "green";
+            let time = new Date();
+            user.startTime = time;
             localStorage.setItem("currentUser", JSON.stringify(user)); 
             setTimeout(() => {
                 window.location.href = "../Dashboard/dashboard.html";

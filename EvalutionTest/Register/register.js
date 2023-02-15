@@ -41,11 +41,16 @@ function handleSubmit(){
         return false;
     }
 
+    let startTime = new Date();
+    let endTime = new Date();
+
     // data addon to local storage
     const data = {
         name,
         email,
-        password
+        password,
+        startTime,
+        endTime
     }
     
     const users = JSON.parse(localStorage.getItem("admin"));
