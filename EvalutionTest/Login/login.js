@@ -22,28 +22,29 @@ function handleLogin(){
         return false;
     }
 
-    // const subUser = JSON.parse(localStorage.getItem("users"));
-    // console.log(subUser);
+    const subUser = JSON.parse(localStorage.getItem("users"));
+    console.log(subUser);
 
-    // if(subUser){
-    //     const user = subUser.find(user => user.email === email && user.password === password);
-    //     if(user){
-    //         alert.textContent = "Login Successful !!";
-    //         alert.style.display = "block"
-    //         alert.style.backgroundColor = "green";
-    //         let time = new Date();
-    //         user.startTime = time;
-    //         localStorage.setItem("currentSubUser", JSON.stringify(user)); 
-    //         setTimeout(() => {
-    //             window.location.href = "../SubUser/sub-user.html";
-    //         }, 2000);
-    //         return true;
-    //     }else{
-    //         alert.textContent = "User does not exist !!";
-    //         alert.style.display = "block"
-    //         return false;
-    //     }
-    // }
+    if(subUser){
+        const user = subUser.find(user => user.email === email && user.password === password);
+        if(user){
+            alert.textContent = "Login Successful !!";
+            alert.style.display = "block"
+            alert.style.backgroundColor = "green";
+            let time = new Date();
+            user.startTime = time;
+            localStorage.setItem("currentSubUser", JSON.stringify(user)); 
+            
+            setTimeout(() => {
+                window.location.href = "../SubUser/sub-user.html";
+            }, 2000);
+            return true;
+        }else{
+            alert.textContent = "User does not exist !!";
+            alert.style.display = "block"
+            // return false;
+        }
+    }
 
     const users = JSON.parse(localStorage.getItem("admin"));
     if(users){

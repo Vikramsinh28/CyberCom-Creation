@@ -9,6 +9,9 @@ function addUser() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let dob = document.getElementById("dob").value;
+    let startTime = new Date();
+    let endTime = new Date();
+    let age = Age(dob);
 
     if (name && email && email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) && password && dob) {
         let users = JSON.parse(localStorage.getItem("users"));
@@ -18,21 +21,20 @@ function addUser() {
                 eError.innerHTML = "User already exists !!";
                 return false;
             } else {
-                let age = Age(dob);
                 let user = {
                     name,
                     email,
                     password,
                     dob,
-                    age
+                    age,
+                    startTime,
+                    endTime
                 }
                 users.push(user);
                 localStorage.setItem("users", JSON.stringify(users));
                 window.location.href = "./User.html";
             }
-
         } else {
-            let age = Age(dob);
             let user = {
                 name,
                 email,
