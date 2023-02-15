@@ -26,9 +26,14 @@
     align-items: center; 
     width: 80vw;
     height: 60vh;
-    color: #f3961e;
-    border: 2px solid #f3961e;
+    color: black;
     border-radius: 5px;
+    background-color: white;
+}
+.title1{
+    font-variant: all-petite-caps;
+    font-size: 4rem;
+    background-color: white
 }
 .title{
     font-variant: all-petite-caps;
