@@ -19,12 +19,21 @@ admin.forEach((item) => {
   nameCell.textContent = item.name;
   row.appendChild(nameCell);
 
-  startTime.textContent = item.loginTime;
-  row.appendChild(startTime);
+  if(item.loginTime){
+    startTime.textContent = item.loginTime;
+    row.appendChild(startTime);
+  }else{
+    startTime.textContent = "Not Logged In Yet";
+    row.appendChild(startTime); 
+  }
 
-  endTime.textContent = item.logoutTime;
-  row.appendChild(endTime);
-
+  if(item.logoutTime){
+    endTime.textContent = item.logoutTime;
+    row.appendChild(endTime);
+  }else{
+    endTime.textContent = "Not Logged Out Yet";
+    row.appendChild(endTime);
+  }
   table.appendChild(row);
 })
 

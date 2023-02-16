@@ -42,10 +42,8 @@ function handleLogin(){
             let userLoginDataTime = ((d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + "  " + strTime)
 
             let data = JSON.parse(localStorage.getItem("users"));
-            var userLoginData = {};
             const AddLoginTime = data.map((element) => {
                 if (element.email == email) {
-                    userLoginData = element;
                     return {
                         ...element,
                         loginTime: userLoginDataTime,

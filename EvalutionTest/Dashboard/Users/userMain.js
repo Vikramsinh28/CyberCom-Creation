@@ -69,7 +69,7 @@ function addTable() {
             let td5 = document.createElement("td");
             let td6 = document.createElement("td");
     
-            td0.innerHTML = temp[i].id;
+            td0.innerHTML = i + 1;
             td1.innerHTML = temp[i].name;
             td2.innerHTML = `<a href="mailto:${temp[i].email}"> ${temp[i].email}</a>`;
             td3.innerHTML = temp[i].password;
