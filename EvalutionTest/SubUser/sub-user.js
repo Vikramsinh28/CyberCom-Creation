@@ -1,5 +1,4 @@
 const currSubUser = JSON.parse(localStorage.getItem('currentSubUser'));
-console.log(currSubUser);
 
 if(adminName){
     const adminName = document.getElementById('adminName');
@@ -26,10 +25,33 @@ if(currSubUser){
 }
 
 function handleLogOut(){
-    const subUser = JSON.parse(localStorage.getItem("users"));
-    const user = subUser.find(user => user.email === currSubUser.email && user.password === currSubUser.password);
-    let time = new Date();
-    user.endTime = time;
+  
+    var d = new Date();
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    let userLogoutDataTime = ((d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + "  " + strTime)
+
+    let email = JSON.parse(localStorage.getItem("currentSubUser")).email;
+    let data = JSON.parse(localStorage.getItem("users"));
+    var userLoginData = {};
+    const AddLogoutTime = data.map((element) => {
+        if (element.email == email) {
+            userLoginData = element;
+            return {
+                ...element,
+                logoutTime: userLogoutDataTime,
+            };
+        }
+        return element;
+    });
+
+
+    localStorage.setItem("users", JSON.stringify(AddLogoutTime));
     localStorage.removeItem("currentSubUser");
     window.location.href = "../Login/login.html";
 }

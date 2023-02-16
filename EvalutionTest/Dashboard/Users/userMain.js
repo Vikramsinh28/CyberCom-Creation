@@ -9,26 +9,27 @@ function addUser() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let dob = document.getElementById("dob").value;
-    let startTime = new Date();
-    let endTime = new Date();
+    let time = new Date();
+    console.log(time.getDay() + "/" + time.getMonth() + "/" + time.getFullYear() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()); 
     let age = Age(dob);
 
     if (name && email && email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) && password && dob) {
+        let id;
         let users = JSON.parse(localStorage.getItem("users"));
         if (users && users.length > 0) {
             let user = users.find((user) => user.email == email);
             if (user) {
-                eError.innerHTML = "User already exists !!";
+                // eError.innerHTML = "User already exists !!";
+                alert("User already exists !!");
                 return false;
             } else {
                 let user = {
+                    id: users.length,
                     name,
                     email,
                     password,
                     dob,
-                    age,
-                    startTime,
-                    endTime
+                    age
                 }
                 users.push(user);
                 localStorage.setItem("users", JSON.stringify(users));
@@ -36,6 +37,7 @@ function addUser() {
             }
         } else {
             let user = {
+                id: 0,
                 name,
                 email,
                 password,
@@ -54,35 +56,36 @@ function addUser() {
 
 function addTable() {
     let temp = JSON.parse(localStorage.getItem("users"));
-    console.log(temp);
     let tbody = document.getElementById("tbody");
-
-    for (let i = 0; i < temp.length; i++) {
-        let tr = document.createElement("tr");
-        let td0 = document.createElement("td");
-        let td1 = document.createElement("td");
-        let td2 = document.createElement("td");
-        let td3 = document.createElement("td");
-        let td4 = document.createElement("td");
-        let td5 = document.createElement("td");
-        let td6 = document.createElement("td");
-
-        td0.innerHTML = i + 1;
-        td1.innerHTML = temp[i].name;
-        td2.innerHTML = `<a href="mailto:${temp[i].email}"> ${temp[i].email}</a>`;
-        td3.innerHTML = temp[i].password;
-        td4.innerHTML = temp[i].dob;
-        td5.innerHTML = temp[i].age;
-        td6.innerHTML = `<button class="btn btn-primary" onclick="handleEditUser(${i})">Edit</button> <button class="btn btn-danger" onclick="handleDeleteUser(${i})">Delete</button>`;
-
-        tr.append(td0);
-        tr.append(td1);
-        tr.append(td2);
-        tr.append(td3);
-        tr.append(td4);
-        tr.append(td5);
-        tr.append(td6);
-        tbody.append(tr);
+    if(temp && temp.length > 0)
+    {
+        for (let i = 0; i < temp.length; i++) {
+            let tr = document.createElement("tr");
+            let td0 = document.createElement("td");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+            let td5 = document.createElement("td");
+            let td6 = document.createElement("td");
+    
+            td0.innerHTML = temp[i].id;
+            td1.innerHTML = temp[i].name;
+            td2.innerHTML = `<a href="mailto:${temp[i].email}"> ${temp[i].email}</a>`;
+            td3.innerHTML = temp[i].password;
+            td4.innerHTML = temp[i].dob;
+            td5.innerHTML = temp[i].age;
+            td6.innerHTML = `<button class="btn btn-primary" onclick="handleEditUser(${temp[i].id})">Edit</button> <button class="btn btn-danger" onclick="handleDeleteUser(${i})">Delete</button>`;
+    
+            tr.append(td0);
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            tr.append(td4);
+            tr.append(td5);
+            tr.append(td6);
+            tbody.append(tr);
+        }
     }
 }
 addTable();

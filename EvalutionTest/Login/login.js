@@ -24,20 +24,38 @@ function handleLogin(){
     }
 
     const subUser = JSON.parse(localStorage.getItem("users"));
-    console.log(subUser);
-
     if(subUser){
         const user = subUser.find(user => user.email === email && user.password === password);
         if(user){
             alert.textContent = "Login Successful !!";
             alert.style.display = "block"
             alert.style.backgroundColor = "green";
-            let time = new Date();
-            user.startTime = time;
             localStorage.setItem("currentSubUser", JSON.stringify(user)); 
-            
+            var d = new Date();
+            var hours = d.getHours();
+            var minutes = d.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            let userLoginDataTime = ((d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + "  " + strTime)
+
+            let data = JSON.parse(localStorage.getItem("users"));
+            var userLoginData = {};
+            const AddLoginTime = data.map((element) => {
+                if (element.email == email) {
+                    userLoginData = element;
+                    return {
+                        ...element,
+                        loginTime: userLoginDataTime,
+                    };
+                }
+                return element;
+            });
+            localStorage.setItem("users", JSON.stringify(AddLoginTime));
             setTimeout(() => {
-                window.location.href = "../SubUser/sub-user.html";
+                window.location.href = "../SubUser/sub-user.html"; 
             }, 2000);
             return true;
         }else{
@@ -54,8 +72,6 @@ function handleLogin(){
             alert.textContent = "Login Successful !!";
             alert.style.display = "block"
             alert.style.backgroundColor = "green";
-            let time = new Date();
-            user.startTime = time;
             localStorage.setItem("currentUser", JSON.stringify(user)); 
             setTimeout(() => {
                 window.location.href = "../Dashboard/dashboard.html";

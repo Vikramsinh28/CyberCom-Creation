@@ -19,10 +19,10 @@ admin.forEach((item) => {
   nameCell.textContent = item.name;
   row.appendChild(nameCell);
 
-  startTime.textContent = item.startTime;
+  startTime.textContent = item.loginTime;
   row.appendChild(startTime);
 
-  endTime.textContent = item.endTime;
+  endTime.textContent = item.logoutTime;
   row.appendChild(endTime);
 
   table.appendChild(row);
