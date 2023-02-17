@@ -91,6 +91,7 @@ function addTable() {
 addTable();
 
 function handleDeleteUser(index) {
+    confirm("Are you sure?")
     let users = JSON.parse(localStorage.getItem("users"));
     users.splice(index, 1);
     localStorage.setItem("users", JSON.stringify(users));
