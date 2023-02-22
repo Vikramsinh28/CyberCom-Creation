@@ -20,3 +20,52 @@
 
 -- select player_id , event_date , games_played from activity  group by
 
+-- Create a table called "customers" with the following columns: id 
+-- (integer, primary key), name (text), email (text), and 
+-- created_at (timestamp).
+
+create table customers(
+   id int primary key,
+    name text,
+    email text,
+    created_at timestamp
+);
+
+-- Insert the following data into the "customers" table:
+
+
+-- id, name, email, created_at
+
+insert into customers values(id , name , email , created_at);
+
+values(1, 'John Smith', 'johnsmith@gmail.com', '2018-01-01 12:00:00'),
+(2, 'Jane Doe', 'janedoe@yahoo.com' , '2018-01-02 12:00:00'),
+(3, 'Bob Jones', 'bobjohnson@hotmail.com ', '2018-01-03 12:00:00')
+
+-- Write a query that selects all customers whose email 
+-- address ends with "@gmail.com".
+
+select * from customers where email like '%@gmail.com';
+
+--  Write a query that selects the customer with the earliest 
+-- created_at date.
+
+select * from customers order by created_at asc limit 1;
+
+-- Write a query that selects the name and email of customers 
+-- who were created on or after January 3, 2022.
+
+select name , email from customers where created_at >= '2022-01-03';
+
+CREATE TABLE sales (
+ id INT PRIMARY KEY,
+ date DATE,
+ customer_id INT,
+ product_id INT,
+ quantity INT,
+ total_price DECIMAL(10,2)
+);
+-- Write a query to retrieve the total sales for each month in the 
+-- year 2021, sorted in ascending order by month.
+
+select date , sum(total_price) from sales where date between '2021-01-01' and '2021-12-31' group by date order by date asc;
