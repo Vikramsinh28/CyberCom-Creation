@@ -19,3 +19,4 @@
 -- select player_id , device_id from activity group by player_id;
 
 -- select player_id , event_date , games_played from activity  group by
+
