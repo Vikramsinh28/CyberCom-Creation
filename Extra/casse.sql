@@ -80,3 +80,160 @@
 -- inner join orders o on p.product_id = o.product_id   
 -- group by p.product_name
 -- having total_orders > 1;
+
+-- Assume that you are working with a database containing
+-- information about a bookstore. The database has several tables:
+-- books table containing information about all books in the 
+-- bookstore. The table has the following columns:
+-- id: unique identifier for each book
+-- title: title of the book
+-- author_id: foreign key pointing to the authors table
+-- publication_date: publication date of the book
+-- authors table containing information about all authors of the 
+-- books in the bookstore. The table has the following columns:
+-- id: unique identifier for each author
+-- name: name of the author
+-- book_categories table containing information about all 
+-- categories of books in the bookstore. The table has the 
+-- following columns:
+-- id: unique identifier for each category
+-- name: name of the category
+-- book_category_mappings table containing information about which 
+-- books belong to which categories. The table has the following 
+-- columns:
+-- id: unique identifier for each mapping
+-- book_id: foreign key pointing to the books table
+-- category_id: foreign key pointing to the book_categories table
+
+create table books
+(
+    id int auto_increment primary key,
+    title varchar(50),
+    author_id int,
+    publication_date date
+);
+
+create table authors
+(
+    id int auto_increment primary key,
+    name varchar(50)
+);
+
+create table book_categories
+(
+    id int auto_increment primary key,
+    name varchar(50)
+);
+
+create table book_category_mappings
+(
+    id int auto_increment primary key,
+    book_id int,
+    category_id int
+);
+
+insert into books(title, author_id, publication_date)
+values('book1', 1, '2020-01-01'),
+('book2', 2, '2020-01-02'),
+('book3', 3, '2020-01-03'),
+('book4', 4, '2020-01-04'),
+('book5', 5, '2020-01-05');
+
+insert into authors(name)
+values('author1'),
+('author2'),
+('author3'),
+('author4'),
+('author5');
+
+insert into book_categories(name)
+values('category1'),
+('category2'),
+('category3'),
+('category4'),
+('category5');
+
+insert into book_category_mappings(book_id, category_id)
+values(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+-- 1. Write a query to find all books published in the year 2020.
+
+select * from books where publication_date like '2020%';
+
+-- . Write a query to find the name of the author who has 
+-- written the most number of books.
+
+select a.name, count(b.id) as total_books from authors a
+inner join books b on a.id = b.author_id
+group by a.name
+order by total_books desc
+limit 1;
+
+select a.name , count(b.id) as total_books from authors a
+inner join books b on a.id = b.author_id
+where total_books = (select max(total_books) from (select count(b.id) as total_books from authors a inner join books b on a.id = b.author_id group by a.name) as t);
+
+-- Write a query to find the name of the category with the 
+-- most number of books.
+
+-- select c.name, count(bcm.id) as total_books from book_categories c
+-- inner join book_category_mappings bcm on c.id = bcm.category_id
+-- group by c.name
+-- order by total_books desc
+-- limit 1;
+
+-- Write a query to find the name of the author who has 
+-- written the most number of books in the category "fiction"
+
+-- select a.name, count(b.id) as total_books from authors a
+-- inner join books b on a.id = b.author_id
+-- inner join book_category_mappings bcm on b.id = bcm.book_id
+-- inner join book_categories c on bcm.category_id = c.id
+-- where c.name = 'fiction'
+-- group by a.name
+-- order by total_books desc
+-- limit 1;    
+
+-- Write a query to find the titles of the top 5 most popular 
+-- books. The popularity of a book is defined as the number of 
+-- times it has been borrowed by customers. Assume that 
+-- information about book borrowings is stored in a separate 
+-- table called book_borrowings with the following columns:
+-- id: unique identifier for each borrowing
+-- book_id: foreign key pointing to the books table
+-- customer_id: foreign key pointing to the customers 
+-- table
+-- borrow_date: date on which the book was borrowed
+
+create table book_borrowings
+(
+    id int auto_increment primary key,
+    book_id int,
+    customer_id int,
+    borrow_date date
+);
+
+insert into book_borrowings(book_id, customer_id, borrow_date)
+values(1, 1, '2020-01-01'),
+(2, 2, '2020-01-02'),
+(3, 3, '2020-01-03'),
+(4, 4, '2020-01-04'),
+(5, 5, '2020-01-05'),
+(1, 1, '2020-01-01'),
+(2, 2, '2020-01-02'),
+(3, 3, '2020-01-03'),
+(4, 4, '2020-01-04'),
+(5, 5, '2020-01-05');
+
+-- select b.title, count(bb.id) as total_borrowings from books b
+-- inner join book_borrowings bb on b.id = bb.book_id
+-- group by b.title
+-- order by total_borrowings desc
+-- limit 5;
+
+
+
