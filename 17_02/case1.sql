@@ -15,7 +15,7 @@
 
 -- create table Products_Category(
 -- 	product_id int,
---  category_id int,
+--    category_id int,
 -- 	foreign key (product_id ) references Products(id),
 -- 	foreign key (category_id) references category(id)    
 -- )
