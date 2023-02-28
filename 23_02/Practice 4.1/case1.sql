@@ -110,3 +110,35 @@ group by b.title
 order by total_borrowings desc
 limit 5;
 
+
+create table customer 
+(
+    id int auto_increment primary key,
+    name varchar(50)
+);
+create table orders
+(
+    id int auto_increment primary key,
+    customer_id int,
+    order_date date
+);
+
+insert into customer(name)
+values('customer1'),
+('customer2'),
+('customer3'),
+('customer4'),
+('customer5');
+
+insert into orders(customer_id, order_date)
+values(1, '2020-01-01'),
+(2, '2020-01-02'),
+(3, '2020-01-03'),
+(4, '2020-01-04'),
+(5, '2020-01-05'),
+(1, '2020-01-01'),
+(2, '2020-01-02'),
+(3, '2020-01-03'),
+(4, '2020-01-04'),
+(5, '2020-01-05');
+
